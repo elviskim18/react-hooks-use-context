@@ -1,7 +1,13 @@
-import React from "react";
+//import useContext hook
+import React, {useContext} from "react";
 import Interests from "./Interests";
 
-function Profile({ user, theme }) {
+//GET UserContext we created
+import {UserContext} from "../context/user"
+
+function Profile({theme }) {
+  //call useCOntext with our UserContext
+  const user = useContext(UserContext)
   if (!user) return <h2>Please Login To View Profile</h2>;
   return (
     <div>
